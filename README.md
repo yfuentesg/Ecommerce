@@ -13,6 +13,8 @@ You need to install the following software
 1. Java 21
 2. Git
 3. Intellij Idea
+4. MySql. Configure a Database named test. 
+   The username and Password must be the same as application.properties
 
 
 ### Steps to build and run the application from the command line:
