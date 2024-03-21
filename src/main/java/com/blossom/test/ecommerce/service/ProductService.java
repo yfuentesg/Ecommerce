@@ -12,5 +12,7 @@ public interface ProductService {
     public ProductDTO updateProduct(int id, ProductDTO p);
     public void deactivateProduct(int id);
 
+    public List<ProductDTO> listFilteredProducts(String name, Double price, String status);
+
 
 }

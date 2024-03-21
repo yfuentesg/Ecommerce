@@ -49,4 +49,14 @@ public class ProductController {
     public ResponseEntity<ProductDTO> updateProduct(@PathVariable("id") int id, @RequestBody ProductDTO product) {
         return new ResponseEntity<>(productService.updateProduct(id, product), HttpStatus.OK);
     }
+
+    @GetMapping("/findFilteredProducts")
+    @ApiOperation("Finds a list of product filtering by name or price or status")
+    public ResponseEntity<List<ProductDTO>> findFilteredProducts(@RequestParam(required = false) String name,
+                                                           @RequestParam(required = false) Double price,
+                                                           @RequestParam(required = false) String status) {
+        return ResponseEntity.ok(productService.listFilteredProducts(name == null ? "" : name,
+                                                                     price == null ? 0.0 : price,
+                                                                     status == null ? "A" : status));
+    }
 }

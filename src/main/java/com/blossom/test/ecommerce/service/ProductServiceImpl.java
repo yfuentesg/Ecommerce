@@ -69,4 +69,12 @@ public class ProductServiceImpl implements ProductService{
             productRepository.save(currentProduct);
         }
     }
+
+    @Override
+    public List<ProductDTO> listFilteredProducts(String name, Double price, String status) {
+        return productRepository.findByNameContainingAndPriceGreaterThanAndStatus(name, price, status)
+                .stream()
+                .map(productMapper::toDTO)
+                .collect(Collectors.toList());
+    }
 }

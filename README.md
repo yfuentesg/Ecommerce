@@ -19,5 +19,5 @@ You need to install the following software
 
 ### Steps to build and run the application from the command line:
 1. Clone the repository https://github.com/yfuentesg/ecommerce.git
-2. Configure EcommerceApplication as main class 
+2. Configure EcommerceApplication as main class, add -jwt.secret as an environment parameter 
 3. Execute
