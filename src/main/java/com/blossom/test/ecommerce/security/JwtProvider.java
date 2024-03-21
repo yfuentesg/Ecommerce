@@ -35,7 +35,7 @@ public class JwtProvider {
         claims.put("email", user.getEmail());
         //claims.put("role","ADMINROLE");
         Date now = new Date();
-        Date exp = new Date(now.getTime() + 60000); /*60 sg*/
+        Date exp = new Date(now.getTime() + 120000); /*120 sg*/
         return TokenDTO.builder().token(Jwts.builder()
                                         .setClaims(claims)
                                         .setIssuedAt(now)
